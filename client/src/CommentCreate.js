@@ -8,7 +8,7 @@ export default ({ postId }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
+    await axios.post(`http://127.0.0.1:4001/posts/${postId}/comments`, {
       content,
     });
     setContent(''); // clear the value after submitting
@@ -20,9 +20,9 @@ export default ({ postId }) => {
         <div className='form-group'>
           <label>New Comment</label>
           <input
+            className='form-control'
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className='form-control'
           />
         </div>
         <button className='btn btn-primary'>Submit</button>
