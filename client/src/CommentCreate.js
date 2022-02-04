@@ -8,7 +8,7 @@ export default ({ postId }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    await axios.post(`http://127.0.0.1:4001/posts/${postId}/comments`, {
+    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
       content,
     });
     setContent(''); // clear the value after submitting
